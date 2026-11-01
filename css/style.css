@@ -1,0 +1,130 @@
+﻿
+/* 1. 全局基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* 2. 顶部导航栏 */
+.site-header {
+    height: 72px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111c33;
+    border-bottom: 1px solid #26344d;
+}
+
+.site-header h1 {
+    font-size: 24px;
+    color: #38bdf8;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 28px;
+}
+
+.site-header nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-header nav a:hover {
+    color: #38bdf8;
+}
+
+/* 3. 首页主视觉区域 */
+.hero {
+    min-height: 480px;
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #0f172a, #1e3a5f);
+}
+
+.hero h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 32px;
+}
+
+/* 4. 按钮 */
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background-color: #0ea5e9;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: #0284c7;
+    transform: translateY(-3px);
+}
+
+/* 5. 内容区域 */
+main > section:not(.hero) {
+    padding: 80px 8%;
+    min-height: 220px;
+}
+
+main > section h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+
+main > section p {
+    color: #cbd5e1;
+}
+
+/* 6. 页脚 */
+footer {
+    padding: 24px;
+    text-align: center;
+    background-color: #111c33;
+    color: #94a3b8;
+}
+
+/* 7. 手机屏幕适配 */
+@media (max-width: 600px) {
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .site-header nav {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 80px 5%;
+    }
+
+    main > section:not(.hero) {
+        padding: 60px 5%;
+    }
+}
