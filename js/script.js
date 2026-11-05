@@ -28,6 +28,34 @@ function resetGame() {
 const buttons = document.querySelectorAll("button");
 
 for (const button of buttons) {
+    if (button.classList.contains("profile-toggle")) {
+        continue;
+    }
     button.addEventListener("click", createParagraph);
 }
+
+const profile = document.querySelector(".profile");
+const profileToggle = document.querySelector(".profile-toggle");
+const profileCard = document.querySelector("#profile-card");
+
+function setProfileOpen(open) {
+    profileCard.hidden = !open;
+    profileToggle.setAttribute("aria-expanded", String(open));
+}
+
+profileToggle.addEventListener("click", () => {
+    setProfileOpen(profileCard.hidden);
+});
+
+document.addEventListener("click", (event) => {
+    if (!profile.contains(event.target)) {
+        setProfileOpen(false);
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        setProfileOpen(false);
+    }
+});
 

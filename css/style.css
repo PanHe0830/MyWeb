@@ -19,6 +19,8 @@ body {
 
 /* 2. 顶部导航栏 */
 .site-header {
+    position: relative;
+    z-index: 20;
     height: 72px;
     padding: 0 8%;
     display: flex;
@@ -109,7 +111,74 @@ footer {
     color: #94a3b8;
 }
 
-/* 7. 手机屏幕适配 */
+/* 7. 个人信息卡片 */
+.profile {
+    position: relative;
+    align-self: center;
+}
+
+.profile-toggle {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #0ea5e9;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.profile-toggle:hover {
+    background-color: #0284c7;
+}
+
+.profile-card {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10;
+    width: 240px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #111c33;
+    border: 1px solid #26344d;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.profile-avatar {
+    display: block;
+    width: 56px;
+    height: 56px;
+}
+
+.profile-name {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.profile-tags li {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background-color: #1e3a5f;
+    color: #7dd3fc;
+    font-size: 12px;
+}
+
+.profile-notes {
+    margin-top: 12px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* 8. 手机屏幕适配 */
 @media (max-width: 600px) {
     .site-header {
         padding: 0 5%;
