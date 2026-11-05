@@ -1,7 +1,8 @@
 function createParagraph() {
     const para = document.createElement("p");
     para.textContent = "你点击了按钮！";
-    document.body.appendChild(para);
+    console.log(para);
+    //document.body.appendChild(para);
 }
 
 function resetGame() {
